@@ -12,9 +12,10 @@ const initialNodes = [
     {
         id: 'horizontal-1',
         sourcePosition: 'right',
-        type: 'input',
-        data: { label: 'Owner' },
+        // type: 'input',
+        data: { label: 'Owner', child: 'CFS Zipp Ltd' },
         position: { x: 0, y: 80 },
+        type: 'selectorNode',
 
 
     },
@@ -22,56 +23,72 @@ const initialNodes = [
         id: 'horizontal-2',
         sourcePosition: 'right',
         targetPosition: 'left',
-        data: { label: 'A Node' },
+        data: { label: 'PM', child: 'Spacetel UK Ltd' },
         position: { x: 250, y: 0 },
-        style: { borderColor: 'red' }
+        type: 'selectorNode',
     },
+
+
     {
         id: 'horizontal-3',
         sourcePosition: 'right',
         targetPosition: 'left',
-        data: { label: 'Node 3' },
+        data: { label: 'PM', child: 'Zippcard' },
         position: { x: 250, y: 160 },
+        type: 'selectorNode',
+
     },
+    // {
+    //     id: 'spm1',
+    //     sourcePosition: 'right',
+    //     targetPosition: 'left',
+    //     data: { label: 'PM', child: 'Stel' },
+    //     position: { x: 250, y: 0 },
+    //     type: 'selectorNode',
+    // },
     {
         id: 'horizontal-4',
         sourcePosition: 'right',
         targetPosition: 'left',
-        data: { label: 'Node 4' },
-        position: { x: 500, y: 0 },
+        data: { label: 'SPM', child: 'STEL SPM Voicetec.US' },
+        position: { x: 550, y: -60 },
+        type: 'selectorNode',
     },
     {
         id: 'horizontal-5',
         sourcePosition: 'top',
-        targetPosition: 'bottom',
-        data: { label: 'Node 5' },
-        position: { x: 500, y: 100 },
+        targetPosition: 'left',
+        data: { label: 'PM', child: 'STEL SPM Voicetecsys.Com' },
+        position: { x: 550, y: 60 },
+        type: 'selectorNode',
     },
     {
         id: 'horizontal-6',
         sourcePosition: 'bottom',
-        targetPosition: 'top',
-        data: { label: 'Node 6' },
-        position: { x: 500, y: 230 },
+        targetPosition: 'left',
+        data: { label: 'PM', child: 'Zipp SPM Zippcard.UK' },
+        position: { x: 550, y: 230 },
+        type: 'selectorNode',
     },
     {
         id: 'horizontal-7',
         sourcePosition: 'right',
         targetPosition: 'left',
-        data: { label: 'Node 7' },
-        position: { x: 750, y: 50 },
-    },
-    {
-        id: 'horizontal-8',
-        sourcePosition: 'right',
-        targetPosition: 'left',
-        position: { x: 750, y: 300 },
+        data: { label: 'PM', child: 'Zipp SPM Zippcard.com' },
+        position: { x: 550, y: 120 },
         type: 'selectorNode',
-        data: { value: 'test' },
-        style: { borderColor: 'red' }
-
-
     },
+    // {
+    //     id: 'horizontal-8',
+    //     sourcePosition: 'right',
+    //     targetPosition: 'left',
+    //     position: { x: 750, y: 300 },
+    //     type: 'selectorNode',
+    //     data: { label: 'test', child: 'SPM' },
+    //     style: { borderColor: 'red' }
+
+
+    // },
 ];
 
 const initialEdges = [
@@ -80,7 +97,7 @@ const initialEdges = [
         source: 'horizontal-1',
         type: 'smoothstep',
         target: 'horizontal-2',
-        animated: true,
+        animated: false,
         markerEnd: {
             type: MarkerType.Arrow,
         }
@@ -90,7 +107,17 @@ const initialEdges = [
         source: 'horizontal-1',
         type: 'smoothstep',
         target: 'horizontal-3',
-        animated: true,
+        animated: false,
+        markerEnd: {
+            type: MarkerType.Arrow,
+        },
+    },
+    {
+        id: 'horizontal-e2-spm1',
+        source: 'horizontal-1',
+        type: 'smoothstep',
+        target: 'spm1',
+        animated: false,
         markerEnd: {
             type: MarkerType.Arrow,
         },
@@ -100,17 +127,16 @@ const initialEdges = [
         source: 'horizontal-2',
         type: 'smoothstep',
         target: 'horizontal-4',
-        label: 'edge label',
         markerEnd: {
             type: MarkerType.Arrow,
         },
     },
     {
         id: 'horizontal-e3-5',
-        source: 'horizontal-3',
+        source: 'horizontal-2',
         type: 'smoothstep',
         target: 'horizontal-5',
-        animated: true,
+        animated: false,
         markerEnd: {
             type: MarkerType.Arrow,
         },
@@ -120,31 +146,41 @@ const initialEdges = [
         source: 'horizontal-3',
         type: 'smoothstep',
         target: 'horizontal-6',
-        animated: true,
+        animated: false,
         markerEnd: {
             type: MarkerType.Arrow,
         },
     },
     {
         id: 'horizontal-e5-7',
-        source: 'horizontal-5',
+        source: 'horizontal-3',
         type: 'smoothstep',
         target: 'horizontal-7',
-        animated: true,
+        animated: false,
         markerEnd: {
             type: MarkerType.Arrow,
         },
     },
-    {
-        id: 'horizontal-e6-8',
-        source: 'horizontal-6',
-        type: 'smoothstep',
-        target: 'horizontal-8',
-        animated: true,
-        markerEnd: {
-            type: MarkerType.Arrow,
-        },
-    },
+    // {
+    //     id: 'horizontal-e6-8',
+    //     source: 'horizontal-6',
+    //     type: 'smoothstep',
+    //     target: 'horizontal-8',
+    //     animated: false,
+    //     markerEnd: {
+    //         type: MarkerType.Arrow,
+    //     },
+    // },
+    // {
+    //     id: 'horizontal-e8-7',
+    //     source: 'horizontal-8',
+    //     type: 'smoothstep',
+    //     target: 'horizontal-7',
+    //     animated: false,
+    //     markerEnd: {
+    //         type: MarkerType.Arrow,
+    //     },
+    // },
 ];
 
 const HorizontalFlow = () => {
