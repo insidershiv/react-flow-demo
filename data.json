@@ -1,0 +1,43 @@
+[
+    {
+        
+        "id":"1",      //id of the entity in string format
+        "parent":null,   // entity id of the parent in string format
+        "children":["2","3","4"], // these are the entity id's of their children also in string
+        "position":1,          // position of the node in the tree
+        "total_siblings":1,     // total number of siblings , including the current child node
+        "data": { "entityType": "Owner", "name": "CFS Zipp Ltd", entityId: '1441' }
+        
+    },
+    {
+        
+        "id":"2",     //id of the entity in string format
+        "parent":"1",    // entity id of the parent in string format
+        "children":["5","6"],    // these are the entity id's of their children also in string
+        "position":1,            //   position of the node in the tree
+        "total_siblings":3,       // total number of siblings , including the current child node
+        "data": { "entityType": "SPM", "name": "SPM", entityId:'2212' }
+        
+    },
+    {
+        
+        "id":"3",
+        "parent":"1",
+        "children":[],
+        "position":2,
+        "total_siblings":3,
+        "data": { "entityType": "Corporate", "name": "spm2", entityId:'1292'  }
+        
+    },
+    {
+        
+        "id":"4",
+        "parent":"1",
+        "children":[],
+        "position":3,
+        "total_siblings":3,
+        "data": { "entityType": "SPM", "name": "another name", entityId:'24242'  }
+        
+    }
+]
+

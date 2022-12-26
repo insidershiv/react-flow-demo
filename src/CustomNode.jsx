@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { Handle, Position } from 'reactflow';
 
 function TextUpdaterNode({ data }) {
-    console.log(data)
     return (
         <div style={{ padding: '2px' }}>
             <Handle type="target" position={Position.Left} style={{ backgroundColor: 'transparent', color: 'none', visibility: 'hidden' }} />
